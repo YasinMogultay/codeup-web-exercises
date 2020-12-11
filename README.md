@@ -1,1 +1,1 @@
-# codeup-web-exercise
+# codeup-web-exercises
