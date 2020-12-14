@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Functions Exercises on Class JS</title>
+    </head>
+    <body>
+        <script>
+            // Write a function, isShortWord, that takes in a string and returns the boolean value true if the passed argument is shorter than 5 characters. Return false otherwise.
+
+            function isShortWord (input) {
+                return  input.length < 5;
+
+            }
+
+            console.log(isShortWord("yasin"))
+
+            // Write a function, isSameLength, that takes in two string inputs and returns the boolean value true if the passed arguments are the same length. Return false otherwise.
+
+            function isSameLength(input1, input2){
+                return input1.length == input2.length ;
+            }
+
+            console.log(isSameLength("yasi", "yas"));
+
+            // Write a function, getSmallerSegment, that takes in a string and a number input. The function should return a substring of the first argument that is as many characters long as the second argument in lowercase.
+            // example input: getSmallerSegment("Codeup", 3)
+            // example output: "cod"
+
+            function getSmallerSegment(input3, input4) {
+                return input3.substring(0, input4).toLowerCase();
+            }
+
+            console.log(getSmallerSegment("codeup", 4));
+        </script>
+    </body>
+</html>
