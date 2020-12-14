@@ -29,8 +29,8 @@ var classDoesNotConflict = true;
 var acceptedClass = classIsNotFull && classDoesNotConflict;
 alert(acceptedClass);
 
-// var itemsBought = parseInt(prompt('How many items have you buy ?'));
-// var offerValid = confirm('Do you have an valid offer ?')
-// var isPremiumMember = confirm('Do you have a premium membership ?')
-// var canApplyOffer = offerValid && (itemsBought >= 2 && isPremiumMember);
-// alert(canApplyOffer);
+var itemsBought = parseInt(prompt('How many items have you buy ?'));
+var offerValid = confirm('Do you have an valid offer ?')
+var isPremiumMember = confirm('Do you have a premium membership ?')
+var canApplyOffer = offerValid && (itemsBought >= 2 && isPremiumMember);
+alert(canApplyOffer);
