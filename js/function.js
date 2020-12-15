@@ -36,8 +36,8 @@ console.log(helloMessage);
  *
  */
 
-var myName = sayHello("Yasin");
-console.log(myName);
+var myName = "Yasin";
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -65,8 +65,8 @@ function isTwo(number){
     return number === 2;
 }
 
-console.log(isTwo(2));
-
+console.log(random);
+console.log(isTwo(random));
 
 /**
  * TODO:
