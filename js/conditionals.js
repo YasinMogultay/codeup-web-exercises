@@ -20,15 +20,17 @@
  * console.logging the function's return value
  */
 
-// var analyzeColor = "gray";
-//
-// if (analyzeColor === "blue") {
-//     console.log("blue is the color of the sky");
-// } else if (analyzeColor === "red") {
-//     console.log("Strawberries are red");
-// } else {
-//     console.log("I don't know anything about " + analyzeColor);
+// function analyzeColor (color) {
+//     if (color === "blue") {
+//         console.log("blue is the color of the sky");
+//     } else if (color === "red") {
+//         console.log("Strawberries are red");
+//     } else {
+//         console.log("I don't know anything about " + color);
+//     }
 // }
+//
+// analyzeColor("blue");
 
 
 // Don't change the next two lines!
@@ -44,10 +46,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-// if (randomColor) {
-//   console.log(randomColor);
-// }
-
+// var analyzeColor = randomColor;
+// console.log(randomColor);
 
 /**
  * TODO:
@@ -55,9 +55,15 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 
 // switch (randomColor) {
-//     case randomColor:
-//         console.log(randomColor);
+//     case "blue":
+//         console.log("blue is the color of the sky");
 //         break;
+//     case "red":
+//         console.log("Strawberries are red");
+//         break;
+//     default:
+//         console.log("I don't know anything about " + randomColor);
+//
 // }
 
 /**
@@ -67,15 +73,17 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * function to show it to the user.
  */
 
-// var analyzeColor = prompt("What is your favorite color ?");
-//
-// if (analyzeColor === "blue") {
-//     alert("blue is the color of the sky");
-// } else if (analyzeColor === "red") {
-//     alert("Strawberries are red");
-// } else {
-//     alert("I don't know anything about " + analyzeColor);
+// function analyzeColor (userColor) {
+//     var userColor = prompt("What is your color ?");
+//     if (userColor === "blue") {
+//         alert("blue is the color of the sky");
+//     } else if (userColor === "red") {
+//         alert("Strawberries are red");
+//     } else {
+//         alert("I don't know anything about " + userColor);
+//     }
 // }
+// analyzeColor();
 
 /* ########################################################################## */
 
@@ -99,25 +107,22 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
-
-// function calculateTotal (luckyNumber, totalAmount) {
-//     if (luckyNumber === 1) {
-//         console.log("You total amount is $" + (totalAmount * 0.90));
-//     } else if (luckyNumber === 2) {
-//         console.log("You total amount is $" + (totalAmount * 0.75));
-//     } else if (luckyNumber === 3) {
-//         console.log("You total amount is $" + (totalAmount * 0.65));
-//     } else if (luckyNumber === 4) {
-//         console.log("You total amount is $" + (totalAmount * 0.50));
-//     } else if (luckyNumber === 5) {
-//         console.log("You total amount is $" + (totalAmount -  totalAmount));
-//     } else {
-//         console.log("You total amount is $" + (totalAmount));
-//     }
-// }
-//
-// console.log(calculateTotal(4, 100))
-
+function calculateTotal (luckyNumber, totalAmount) {
+    if (luckyNumber === 1) {
+        console.log(("You will get 10% discount and your total is $") + (totalAmount * 0.90));
+    } else if (luckyNumber === 2) {
+        console.log(("You will get 25% discount and your total is $") + (totalAmount * 0.75));
+    } else if (luckyNumber === 3) {
+        console.log(("You will get 35% discount and your total is $") + (totalAmount * 0.65));
+    } else if (luckyNumber === 4) {
+        console.log(("You will get 50% discount and your total is $") + (totalAmount * 0.50));
+    } else if (luckyNumber === 5) {
+        console.log(("You will get your all for free $") + (totalAmount - totalAmount));
+    } else {
+        console.log(("You dont have discount and your total is $") + totalAmount);
+    }
+}
+// calculateTotal(1, 100);
 
 /**
  * TODO:
@@ -127,29 +132,11 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-
-
-// function calculateTotal (luckyNumber, totalAmount) {
-//     var luckyNumber = Math.floor(Math.random() * 6);
-//     var totalAmount = prompt("How much is your total bill ?");
-//     var luckyNumber = alert("You lucky number was #" + luckyNumber + " Your price before discount price was $" + totalAmount + " Your price after discount price is $" + calculateTotal;
-//     if (luckyNumber === 1) {
-//         console.log("You total amount is $" + (totalAmount * 0.90));
-//     } else if (luckyNumber === 2) {
-//         console.log("You total amount is $" + (totalAmount * 0.75));
-//     } else if (luckyNumber === 3) {
-//         console.log("You total amount is $" + (totalAmount * 0.65));
-//     } else if (luckyNumber === 4) {
-//         console.log("You total amount is $" + (totalAmount * 0.50));
-//     } else if (luckyNumber === 5) {
-//         console.log("You total amount is $" + (totalAmount -  totalAmount));
-//     } else {
-//         console.log("You total amount is $" + (totalAmount));
-//     }
-// }
-//
-// console.log(calculateTotal());
+var luckyNumber = Math.floor(Math.random() * 6);
+var totalBill = prompt("How much is your total bill ?");
+var discountedPrice = calculateTotal(luckyNumber, totalBill);
+var outputMessage = alert("Your lucky number was $" + luckyNumber + " Your price before discount was $" + totalBill + " Your new price is $" + discountedPrice);
+    console.log(outputMessage);
 
 /**
  * TODO:
@@ -167,3 +154,9 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+    // var number = prompt("Would you like to enter a number ?");
+    // var number1 = confirm("Your number is " + number);
+    //
+    // if (condition) {
+    //     alert("Your number is " function isOdd(num) { return num % 2;})
+    // }
