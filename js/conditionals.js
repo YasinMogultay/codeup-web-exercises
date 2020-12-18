@@ -107,22 +107,36 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
+var totalBill;
+var discount;
+
 function calculateTotal (luckyNumber, totalAmount) {
     if (luckyNumber === 1) {
-        console.log(("You will get 10% discount and your total is $") + (totalAmount * 0.90));
+        discount = .90;
+        totalBill = totalAmount * discount
+        console.log(("You will get 10% discount and your total is $") + (totalBill));
     } else if (luckyNumber === 2) {
-        console.log(("You will get 25% discount and your total is $") + (totalAmount * 0.75));
+        discount = .75;
+        totalBill = totalAmount * discount
+        console.log(("You will get 25% discount and your total is $") + (totalBill));
     } else if (luckyNumber === 3) {
-        console.log(("You will get 35% discount and your total is $") + (totalAmount * 0.65));
+        discount = .65;
+        totalBill = totalAmount * discount
+        console.log(("You will get 35% discount and your total is $") + (totalBill));
     } else if (luckyNumber === 4) {
-        console.log(("You will get 50% discount and your total is $") + (totalAmount * 0.50));
+        discount = .50;
+        totalBill = totalAmount * discount
+        console.log(("You will get 50% discount and your total is $") + (totalBill));
     } else if (luckyNumber === 5) {
-        console.log(("You will get your all for free $") + (totalAmount - totalAmount));
+        discount = .0;
+        totalBill = (totalAmount * discount)
+        console.log(("You will get your all for free $") + (totalBill));
     } else {
-        console.log(("You dont have discount and your total is $") + totalAmount);
+        totalBill = totalAmount
+        console.log(("You dont have discount and your total is $") + totalBill);
     }
 }
-// calculateTotal(1, 100);
+calculateTotal(4, 100);
 
 /**
  * TODO:
@@ -132,11 +146,10 @@ function calculateTotal (luckyNumber, totalAmount) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
-var totalBill = prompt("How much is your total bill ?");
-var discountedPrice = calculateTotal(luckyNumber, totalBill);
-var outputMessage = alert("Your lucky number was $" + luckyNumber + " Your price before discount was $" + totalBill + " Your new price is $" + discountedPrice);
-    console.log(outputMessage);
+// var luckyNumber = Math.floor(Math.random() * 6);
+//
+// let totalAmount = prompt("How much is your total bill ?");
+// calculateTotal(alert("Your lucky number was #" + luckyNumber + " Your price before discount was $" + totalAmount + " Your new price is $" + totalBill));
 
 /**
  * TODO:
@@ -154,9 +167,13 @@ var outputMessage = alert("Your lucky number was $" + luckyNumber + " Your price
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-    // var number = prompt("Would you like to enter a number ?");
-    // var number1 = confirm("Your number is " + number);
-    //
-    // if (condition) {
-    //     alert("Your number is " function isOdd(num) { return num % 2;})
-    // }
+// var condition = prompt(" do you wanna enter a number");
+//
+//      if (condition) {
+//          prompt(" Enter a number");
+//      }
+//      if (condition) {
+//          confirm("your number is " + num);
+//      }
+
+
