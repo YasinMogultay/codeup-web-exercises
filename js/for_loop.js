@@ -30,22 +30,9 @@
 
 // Q4
 
-// for (var i = 1; i < 999999999; i = 2 * (i++)) {
-//     console.log(i);
-// }
-// function generatePyramid() {
-//     var totalNumberofRows = 9;
-//     var output = '';
-//     for (var i = 1; i <= totalNumberofRows; i++) {
-//         for (var j = 1; j <= i; j++) {
-//             output = output + i;
-//         }
-//         console.log(output);
-//         output = '';
-//     }
-// }
-//
-// generatePyramid();
+for (var i = 1; i <= 9; i += 1) {
+    console.log(String(i).repeat(i));
+}
 
 // Q5
 
