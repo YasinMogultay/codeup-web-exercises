@@ -7,15 +7,15 @@ function isValid(input) {
     var isOdd = input % 2 === 1;
     var correctRange = 1 <= input <= 50;
     return isNumeric && isOdd && correctRange;
-
 }
+
 var userNum;
 while (true) {
     userNum = parseFloat(prompt("Please enter an odd number between 1 and 50"));
     if (isValid(userNum)) {
     break;
     }
-    alert( " INVALID NUMBER ")
+    alert( " INVALID NUMBER " )
 }
 console.log("Number to skip is  " + userNum);
 
