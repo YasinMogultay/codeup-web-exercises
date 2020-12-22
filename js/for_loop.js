@@ -8,31 +8,25 @@
 //     console.log(number + " * " + i + " = " + (number * i));
 // }
 
-// actual answer
-// for(var x = 1; x <= 10; x++) {
-//     var randomNumber = Math.floor(Math.random() * (200 - 20) + 20);
-//     if(randomNumber % 2 === 0) {
-//         console.log(randomNumber + " is even");
-//     } else {
-//         console.log(randomNumber + " is odd.");
-//     }
-// }
 
 //Q3
+// function tenOddOrEvenNumber () {
+//     function randomIntFromInterval(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1) + min);
+// }
+//         var random, evenOddString;
+//     for (var i = 0; i < 10; i += 1) {
+//          random = randomIntFromInterval(20,200);
+//          evenOddString = (random % 2 === 0 ) ? "even": "odd";
+//         console.log(random + " is " + evenOddString);
+//     }}
 
-// for (var a = 20; a < 30; a++) {
-//  if (a % 2 === 0) {
-//     console.log(a + " is even number");
-// } else if (a % 2 !== 0) {
-//     console.log(a + " is odd number");
-// }
-// }
 
 // Q4
-
-for (var i = 1; i <= 9; i += 1) {
-    console.log(String(i).repeat(i));
-}
+//
+// for (var i = 1; i <= 9; i += 1) {
+//     console.log(String(i).repeat(i));
+// }
 
 // Q5
 
