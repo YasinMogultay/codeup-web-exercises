@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS First Practice Assesment</title>
+    </head>
+    <body>
+        <script>
+            "use strict";
+
+            // Define a function named isTrue that takes in any input and returns true if the input provided is exactly equal to true in value and data type.
+            function isTrue (input){
+                return input === true;
+            }
+            isTrue();
+
+            //Define a function named isFalse that takes in a value and returns a true if and only if the provided input is equal to false in both type and value.
+            function  isFalse (input1) {
+                return input1 === false;
+            }
+            isFalse();
+
+            //Define a function named not that takes in any input and returns the boolean opposite of the provided input.
+            function not(input3) {
+                return !input3 === true;
+            }
+            not();
+
+            //Define a function named addOne that takes in a single input. If the input is a number or a numeric string, return the value plus one.
+            function addOne (input4) {
+                return ++input4;
+            }
+            addOne();
+
+            //Define a function named isEven that takes in a single input. If the input is an even number or a string containing an even number, return true. Any other input should return false for the output
+
+            function isEven (input5){
+                return (input5 % 2 == 0);
+            }
+            isEven();
+
+            //Define a function named isIdentical that takes in two input arguments. If each input is equal both in data type and in value, then return true. If the values are not the same data type or not the same value, return false
+
+            function isIdentical (input6, input7) {
+                return input6 === input7;
+            }
+            isIdentical();
+
+            //Define a function named isEqual that takes in two input arguments. If each argument is equal only in value, then return true. Otherwise return false.
+            function isEqual (input8, input9) {
+                return input8 == input9;
+            }
+            isEqual();
+
+            //Define a function named or that takes in two input arguments. The output returned should be the result of an or operation on both inputs.
+            function or(input10, input11) {
+                return input10 || input11;
+            }
+            or();
+
+            //Define a function named and that takes in two input arguments and returns the result of a logical and operation of both inputs.
+            function and(input12, input13) {
+                return input12 && input13;
+            }
+            and();
+
+            //Define a function named concat that takes in two input arguments. If both arguments are strings, then return the concatenated result. If two numbers are provided, then return the string concatenation of each set of numerals
+            function concat (input14, input15) {
+                return input14 + "" + input15;
+            }
+            concat();
+        </script>
+    </body>
+</html>
