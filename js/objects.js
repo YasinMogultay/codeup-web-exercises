@@ -1,4 +1,4 @@
-(function() {
+// (function() {
     "use strict";
 
     /**
@@ -12,13 +12,13 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-        var person = {
-            firstName: "Yasin",
-            lastName: "Mogultay",
-            sayHello: function (){
-                return("Hello From ")
-            },
-        }
+        // let person = {
+        //     firstName: "Yasin",
+        //     lastName: "Mogultay !",
+        //     sayHello: function (){
+        //         return("Hello From " + this.firstName + " " + this.lastName)
+        //     },
+        // }
         // console.log(person.firstName) // "Yasin"
         // console.log(person.lastName) // "Mogultay"
 
@@ -31,8 +31,7 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-
-        console.log(person.sayHello + person.firstName + " " + person.lastName);
+    // console.log(person.sayHello())
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -48,11 +47,23 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    let shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320},
+        {hebOffer: function (){
+                if (this.amount > 200)
+                    console.log ("Congrats "
+                        + this.name
+                        + " your undiscounted price :$"
+                        + this.amount
+                        + " Your discount is 12%" + "your discounted price is "
+                        + this.amount * 0.12);
+                              }},
+    ];
+
+
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -103,4 +114,4 @@
      *   `showBookInfo` function.
      */
 
-})();
+// })();
