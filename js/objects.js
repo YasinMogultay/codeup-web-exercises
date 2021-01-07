@@ -1,4 +1,4 @@
-// (function() {
+(function() {
     "use strict";
 
     /**
@@ -77,10 +77,10 @@
 
     let books = [
         {title: "To Kill a Mockingbird", author: {firstName: "Harper ", lastName: "Lee"}},
-        {title: "1984", author: {firstName: "George", lastName: "Orwell"}},
-        {title: "Harry Potter", author: {firstName: "J.K.", lastName: "Rowling"}},
-        {title: "The Lord of the Rings", author: {firstName: "J.R.R.", lastName: "Tolkien"}},
-        {title: "The Great Gatsby", author: {firstName: "F. Scott", lastName: "Fitzgerald"}},
+        {title: "1984", author: {firstName: "George", lastName: " Orwell"}},
+        {title: "Harry Potter", author: {firstName: "J.K.", lastName: " Rowling"}},
+        {title: "The Lord of the Rings", author: {firstName: "J.R.R.", lastName: " Tolkien"}},
+        {title: "The Great Gatsby", author: {firstName: "F. Scott", lastName: " Fitzgerald"}},
 
     ]
 
@@ -112,11 +112,10 @@
      *      ---
      *      ...
      */
-    for (var i = 0; i < books.length; i++) {
-        console.log("Book # " +i)
-        console.log("Title: " + books[i].title)
-        console.log("Author: " + books[i].author.firstName + books[i].author.lastName)
-    }
+
+    // for (var i = 0; i < books.length; i++) {
+    //     console.log("Book # " + i + "\n" + "Title: " + books[i].title + "\n" +"Author: " + books[i].author.firstName + books[i].author.lastName)
+    // }
 
     /**
      * Bonus:
@@ -129,9 +128,29 @@
      *   `showBookInfo` function.
      */
 
+    function createBook(title, firstName, lastName, booksArr) {
+    var obj = {
+        title: title,
+        author : {
+            firstName: firstName,
+            lastName: lastName
+        }
+    };
+
+    booksArr.push(obj);
+    return booksArr;
+}
+
+    createBook("Forest Gump", "Winston ", "Groom", books);
 
 
+    function showBookInfo (book) {
+        var input = "Title: " + book.title + "\n";
+        input = input + "Author: " + book.author.firstName + " " + book.author.lastName;
+        return input;
+    }
+        books.forEach(function(book, index) {
+            console.log("Book #" + (index + 1) + "\n" + showBookInfo(book));
+        })
 
-
-
-// })();
+})();
