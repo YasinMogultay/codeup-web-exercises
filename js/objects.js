@@ -47,22 +47,19 @@
      * and console.log the relevant messages for each person
      */
 
-    let shoppers = [
-        {name: 'Cameron', amount: 180},
-        {name: 'Ryan', amount: 250},
-        {name: 'George', amount: 320},
-        {hebOffer: function (){
-                if (this.amount > 200)
-                    console.log ("Congrats "
-                        + this.name
-                        + " your undiscounted price :$"
-                        + this.amount
-                        + " Your discount is 12%" + "your discounted price is "
-                        + this.amount * 0.12);
-                              }},
-    ];
-
-
+    // let shoppers = [
+    //     {name: 'Cameron', amount: 180},
+    //     {name: 'Ryan', amount: 250},
+    //     {name: 'George', amount: 320},
+    // ];
+    //
+    // shoppers.forEach(function(shopper) {
+    //     if (shopper.amount > 200) {
+    //         console.log("Congrats " + shopper.name + " Your total before discount is $" + shopper.amount + " Your discount is 12% and your final amount is $" + shopper.amount * .88);
+    //     } else {
+    //         console.log("Hello " + shopper.name + " Your total  is " + shopper.amount + " you dont have any discount and your final amount is $" + shopper.amount);
+    //     }
+    // })
 
 
     /** TODO:
@@ -77,6 +74,19 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    let books = [
+        {title: "To Kill a Mockingbird", author: {firstName: "Harper ", lastName: "Lee"}},
+        {title: "1984", author: {firstName: "George", lastName: "Orwell"}},
+        {title: "Harry Potter", author: {firstName: "J.K.", lastName: "Rowling"}},
+        {title: "The Lord of the Rings", author: {firstName: "J.R.R.", lastName: "Tolkien"}},
+        {title: "The Great Gatsby", author: {firstName: "F. Scott", lastName: "Fitzgerald"}},
+
+    ]
+
+        // console.log(books[2].title) // Harry Potter
+        // console.log(books[2].author.firstName) // J.K.
+        // console.log(books[2].author.lastName) // Rowling
 
     /**
      * TODO:
@@ -102,6 +112,11 @@
      *      ---
      *      ...
      */
+    for (var i = 0; i < books.length; i++) {
+        console.log("Book # " +i)
+        console.log("Title: " + books[i].title)
+        console.log("Author: " + books[i].author.firstName + books[i].author.lastName)
+    }
 
     /**
      * Bonus:
@@ -113,5 +128,10 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+
+
+
+
 
 // })();
