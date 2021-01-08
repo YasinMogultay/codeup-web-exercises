@@ -12,13 +12,13 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-        // let person = {
-        //     firstName: "Yasin",
-        //     lastName: "Mogultay !",
-        //     sayHello: function (){
-        //         return("Hello From " + this.firstName + " " + this.lastName)
-        //     },
-        // }
+        let person = {
+            firstName: "Yasin",
+            lastName: "Mogultay !",
+            sayHello: function (){
+                return("Hello From " + this.firstName + " " + this.lastName)
+            },
+        }
         // console.log(person.firstName) // "Yasin"
         // console.log(person.lastName) // "Mogultay"
 
@@ -31,6 +31,7 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
     // console.log(person.sayHello())
 
     /** TODO:
@@ -61,6 +62,31 @@
     //     }
     // })
 
+    // Why use for loop over forEach and vice versa?????:
+
+    /*
+
+    For Loop Use Case (benefit: more flexible)
+
+        Flexible iteration (forward/backward/skipping)
+        Do anything a certain numbers (not just traversing an array data)
+
+    For Each (benefit: more readable)
+
+        Only can be used on arrays of data
+        All of the elements in an array need to be accessed
+
+     */
+
+
+    // // each user's name
+    // for (var i = 0; i < shoppers.length; i += 1) {
+    //     console.log(shoppers[i].name);
+    // }
+    //
+    // shoppers.forEach(function(shopper) {
+    //     console.log(shopper.name);
+    // });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -76,17 +102,36 @@
      */
 
     let books = [
-        {title: "To Kill a Mockingbird", author: {firstName: "Harper ", lastName: "Lee"}},
-        {title: "1984", author: {firstName: "George", lastName: " Orwell"}},
-        {title: "Harry Potter", author: {firstName: "J.K.", lastName: " Rowling"}},
-        {title: "The Lord of the Rings", author: {firstName: "J.R.R.", lastName: " Tolkien"}},
-        {title: "The Great Gatsby", author: {firstName: "F. Scott", lastName: " Fitzgerald"}},
-
+        {
+            title: "To Kill a Mockingbird",
+            author: {
+                firstName: "Harper ",
+                lastName: "Lee"}},
+        {
+            title: "1984",
+            author: {
+                firstName: "George",
+                lastName: " Orwell"}},
+        {
+            title: "Harry Potter",
+            author: {
+                firstName: "J.K.",
+                lastName: " Rowling"}},
+        {
+            title: "The Lord of the Rings",
+            author: {
+                firstName: "J.R.R.",
+                lastName: " Tolkien"}},
+        {
+            title: "The Great Gatsby",
+            author: {
+                firstName: "F. Scott",
+                lastName: " Fitzgerald"}},
     ]
-
-        // console.log(books[2].title) // Harry Potter
-        // console.log(books[2].author.firstName) // J.K.
-        // console.log(books[2].author.lastName) // Rowling
+    //
+    //     console.log(books[2].title) // Harry Potter
+    //     console.log(books[2].author.firstName) // J.K.
+    //     console.log(books[2].author.lastName) // Rowling
 
     /**
      * TODO:
@@ -114,8 +159,12 @@
      */
 
     // for (var i = 0; i < books.length; i++) {
-    //     console.log("Book # " + i + "\n" + "Title: " + books[i].title + "\n" +"Author: " + books[i].author.firstName + books[i].author.lastName)
+    //     console.log("Book # " + i + "\n" + "Title: " + books[i].title + "\n" + "Author: " + books[i].author.firstName + books[i].author.lastName)
     // }
+
+    // books.forEach(function(book,index) {
+    //     console.log("Book #"  + index + "\n" +"Title: " + book.title + "\n" + "Author: " + book.author.firstName + book.author.last);
+    // });
 
     /**
      * Bonus:
@@ -128,6 +177,8 @@
      *   `showBookInfo` function.
      */
 
+
+
     function createBook(title, firstName, lastName, booksArr) {
     var obj = {
         title: title,
@@ -139,18 +190,61 @@
 
     booksArr.push(obj);
     return booksArr;
-}
+    }
 
     createBook("Forest Gump", "Winston ", "Groom", books);
 
 
     function showBookInfo (book) {
-        var input = "Title: " + book.title + "\n";
-        input = input + "Author: " + book.author.firstName + " " + book.author.lastName;
+        var input = "Title: " + book.title + "\n" + "Author: " + book.author.firstName + " " + book.author.lastName;
         return input;
     }
         books.forEach(function(book, index) {
             console.log("Book #" + (index + 1) + "\n" + showBookInfo(book));
         })
 
+
+    /**
+     * Extra Bonus:
+     * -Exercise 1. Write a function called makeCar that takes in two strings, make and model, and returns an object with those properties
+     Example: makeCar("VW", "beetle") returns the object {"make": "VW", "model", "beetle"}
+     */
+
+    // function makeCar(make, model) {
+    //     var obj = {
+    //         make: make,
+    //         model: model,
+    //     }
+    //     return obj;
+    // };
+    // console.log(makeCar("VW","Beetle"))
+
+    /**
+     * Extra Bonus:
+     * -Exercise 2. Use the following data to create an object named salesReport.
+     The object should have the following properties:
+     title, date, office, and employees.
+     the employees property should hold an array of objects.
+     each employee should be represented by an object with the following properties:
+     employee-number, first-name, last-name, sales-units
+     */
+    // 1, Jane, Janeway, 3
+    // 3, Tricia, Triciason, 5
+    // 4, Jeannette, Jeanson, 4
+    // 5, Charles Emmerson III, Winchester, 2
+    // 6, Chet, Chedderson, 8
+    // 7, Chaiam, Chaiamson, 12
+    // 8, Dale, Dalesinger, 1
+    // 9, Zig, Ziglar, 50
+    // 10, Henry, Kissinger, 1
+    // 11, Arthur Herbert, Fonzarelli, 23
+    // 12, Betty, Boop, 67
+
+    // var employee = {};
+    // employee.title = "";
+    // employee.data = "";
+    // employee.office = "";
+    // employee.employees = ["employee-number", "first-name", "last-name", "sales-units"];
+    //
+    // console.log("The first car is a " + cars[0].make + " " + cars[0].model + ".");
 })();
