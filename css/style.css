@@ -1,12 +1,64 @@
 .fancy-header {
-    color: purple;
-
+    color: darkblue;
+    text-decoration: underline;
+    margin: auto;
+    width: 40%;
+    border: 1px solid darkblue;
+    background-color: lightsteelblue;
+    padding: 10px;
+    position: relative;
+    animation: headerMove 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes headerMove {
+    0%   {background-color:lightgoldenrodyellow; left:0; right:30px;}
+    25%  {background-color:darkgoldenrod; left:30px; right:0;}
+    50%  {background-color:lightgoldenrodyellow; left:0; right:30px;}
+    75%  {background-color:darkgoldenrod; left:30px; right:0;}
+    100% {background-color:lightgoldenrodyellow; left:0; right:30px;}
+}
+h3 {
+    color: darkblue;
+    text-decoration: underline;
+}
+h3:hover{
+    background-color: lightsteelblue;
+    width: 9%;
+}
+body {
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: whitesmoke;
+    background-size: 1450px;
+    background-position-x: 2px;
+    background-position-y: 1px;
+    background-image: url("https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?cs=srgb&dl=pexels-henry-%26-co-1939485.jpg&fm=jpg");
+}
+ul {
+    list-style-type: georgian;
+}
+ol{
+    list-style-type: upper-alpha;
+}
+th,table,td{
+    font-size: 16px;
+    border: 2px solid darkblue;
+    padding: 10px;
+}
+tr:hover{
+    background-color: darkgray;
+}
+a:link {
+    color:darkblue;
 }
 
-.extra-large {
-    font-size: 100px;
+a:visited {
+    color:black;
 }
 
-#top {
-    color: blue;
+a:hover {
+    color:darkred;
+}
+
+a:active {
+    color:green;
 }
