@@ -99,6 +99,100 @@
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+            // Q1 Define a function named isGreaterThan that takes in two values and returns a true if the first argument is greater
+            // than the second argument otherwise it should return false. If either argument is not a number, return false;
+
+            function isGreaterThan (a,b){
+                return a > b;
+            };
+
+            // Q2 Define a function named isLessThan that takes in two values and returns a true if the first argument is less than
+            // the second argument otherwise it should return false. If either argument is not a number, return false;
+
+            function isLessThan(a,b){
+                return parseFloat(a) < parseFloat(b);
+            };
+
+            //Q3 Define a function named isEqualNumber that takes in two values and returns a true if the first argument is equal to
+            //the second argument, otherwise it should return false. If either argument is not a number return false;
+
+            function isEqualNumber(a,b){
+                return parseFloat(a) == parseFloat(b);
+            };
+
+            // Q4 Define a function named isEqual that takes in two values and returns a true if the first argument has the same
+            // value as the second argument regardless of type, otherwise it should return false.;
+
+            function isEqual(a,b){
+                return a == b;
+            };
+
+            // Q5 Define a function named isNot that accepts a boolean argument and returns the opposite value of the argument.
+            // It should return false if the arguments is null or not a boolean.
+
+            function isNot(input) {
+                return typeof input === "boolean" && !input
+            };
+
+            // Q6 Define a function named calcAbs that accepts a number argument and returns the absolute value of the argument.
+            // It should return O (zero) if the arguments is null or not a number.
+
+            function calcAbs (input){
+                if (isNaN(input)){
+                    return 0;
+                } else
+                    return Math.abs(input);
+            };
+
+            //Q7 Define a function named calcCube that accepts a number argument and returns the cubed value of the argument.
+            // It should return O (zero) if the arguments is null or not a number.
+
+            function calcCube (input){
+                if (isNaN(input)){
+                    return 0;
+                } else
+                    return Math.pow(input, 3);
+            };
+            //Q8 Define a function named isTypeMatch that accepts two arguments and returns true if the types of the arguments match.
+            // It should return false if either arguments is null.
+
+            function isTypeMatch (a,b){
+                return typeof a == typeof b;
+            };
+
+            //Q9 Define a function named findLongestString that accepts two string arguments and returns the string with the
+            // greatest length. If only one argument is a string, return that argument. If neither arguments are strings, return and empty string.
+
+            function findLongestString(x,y) {
+                if (typeof x === "string" || typeof y === "string") {
+                    if (typeof x !== "string") {
+                        return y;
+                    } else if (typeof y !== "string") {
+                        return x;
+                    } else  if (x.length > y.length) {
+                        return x;
+                    } else {
+                        return y;
+                    }
+                } else {
+                    return "";
+                }
+            }
+
+            //Q10 Define a function named isFactor that accepts two number arguments and returns true if the first argument is a
+            // factor of the second argument. It should return false if either argument is null or not a number. Also return null if the first argument is 0 (zero).
+
+            function isFactor (a,b){
+                if (parseInt(b) % parseInt(a) === 0){
+                    return true;
+                } else {
+                    return false;
+                }
+            };
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             //Q1 Define a function named isANumber that takes in a value and returns true if the input is numeric or not.
             //Numeric strings are not considered as numbers and should return false.
 
