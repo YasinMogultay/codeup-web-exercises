@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    "use strict";
+
+    /*
+
+    Create a function, returnUserFirstLetters, that takes in array of user objects and returns a string of the first letters in lowercase of all the user firstName property values.
+
+    Example:
+
+     */
+
+
+    var users = [
+      {
+        age: 24,
+        firstName: 'John'
+      },
+      {
+        age: 43,
+        firstName: 'Cathy'
+      },
+      {
+        age: 65,
+        firstName: 'Bob'
+      }
+    ];
+
+    // My solution
+    // function returnUserFirstLetters(users){
+    //     var lowerCase = users[0].firstName.charAt(0) + users[1].firstName.charAt(0) + users[2].firstName.charAt(0);
+    //     return (lowerCase.toLowerCase());
+    // };
+    //
+    // console.log(returnUserFirstLetters(users)) // returns the value "jcb"
+
+    // Justin's Solution
+    function returnUserFirstLetters(users) {
+        var output = "";
+        for (var i = 0; i < users.length; i+=1 ) {
+            output += users[i].firstName.charAt(0).toLowerCase();
+        }
+        return output
+    }
+    console.log(returnUserFirstLetters(users));
+
+</script>
+
+</body>
+</html>
