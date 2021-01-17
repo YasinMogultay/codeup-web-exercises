@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+nav {
+    background: rgb(180,180,180);
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    font-weight: bold;
+
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: "montserrat";
+    display: inline-block;
+    padding: 10px;
+}
+nav a:hover {
+    background: blue;
+}
+.logo{
+    font-size: 1.6em;
+    margin: 0;
+    flex-basis: 100px;
+
+}
+nav li:nth-child(5){
+    margin: 0 auto;
+}
