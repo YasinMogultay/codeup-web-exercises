@@ -302,6 +302,39 @@
                     return false;
                 }
             }
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            //Q Write a function named remove9s that accepts an array of numbers and returns an array with all the
+            // same numbers except for 9.
+
+            function remove9s (input) {
+                for (var i = 0; i < input.length; i++) {
+                    if (input[i] == 9) {
+                        input.splice(i,1);
+                        i--;
+                    }
+                }
+                return input
+            }
+
+            //Q Write a function named average that accepts an array of numbers and returns the average of those numbers.
+
+            function avarage (input){
+                var total = 0
+                for(var i = 0; i < input.length; i++){
+                    total += input[i]
+                }
+                return  total / input.length
+            }
+
+            //Q Write a function named countOdds that accepts an array of numbers and returns the number of odd numbers in the array.
+
+
+
+
+
+
         </script>
     </body>
 </html>
