@@ -29,7 +29,6 @@ nav a:hover {
     font-size: 1.6em;
     margin: 0;
     flex-basis: 100px;
-
 }
 nav li:nth-child(5){
     margin: 0 auto;
