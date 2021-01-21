@@ -1,0 +1,37 @@
+.jumbotron {
+    background-image: url("../img/pizza.png");
+    margin-top: 25px;
+}
+h1 {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255,255,255,0.5);
+}
+.button-custom{
+    margin-left: auto;
+}
+.custom-padding {
+    padding-left: 2px;
+}
+.btn-outline-success {
+    color: black;
+    border-color: lightgray;
+}
+.custom-li {
+    padding-left: 40px;
+}
+.select-custom {
+    margin-left: 15px;
+    width: 97%;
+}
+.custom-check {
+    margin-bottom: 17px;
+    margin-left: 11px;
+}
+.custom-check1{
+    margin-left: 11px;
+    margin-top: 10px;
+}
+.custom-check2 {
+    margin-left: 11px;
+}
