@@ -399,6 +399,115 @@
                     })
                     .join(' ');
             }
+
+            //alternative for that question
+            // function capitalizeName (str){
+            //     var split = str.split(' ')
+            //     var firstName = split[0].charAt(0).toUpperCase() + split[0].slice(1) + " "
+            //     var lastName = split[1].charAt(0).toUpperCase() + split[1].slice(1)
+            //     return firstName + lastName
+            // }
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            //Write a function named typeOfNumber that accepts an argument and returns a string number or NaN based on whether the input is a number.
+
+            function typeOfNumber (num){
+                if (typeof num == "number" && !isNaN(num)){
+                    return "number"
+
+                }return "NaN"
+            }
+
+            // Write a function named doubles that accepts an array of numbers and returns an array with double the value of each number.
+
+            function doubles (arr){
+                var arr1 = []
+                for (var i = 0; i < arr.length; i++){
+                    arr1.push(arr[i] * 2)
+                }
+                return arr1
+            }
+
+            //Write a function named sum that accepts an array of numbers and returns the sum of those numbers.
+
+            function sum (arr){
+                var sum1 = 0
+                for (var i = 0; i < arr.length; i++){
+                    sum1 += (arr[i])
+                }
+                return sum1
+            }
+
+            //Write a function named sumOfDoubles that accepts an array of numbers and returns the sum of double each number in the array.
+
+            function sumOfDoubles (arr){
+                var sum = 0
+                for (var i = 0; i < arr.length; i++){
+                    sum += (arr[i] * 2)
+                }
+                return sum
+            }
+
+            //Write a function named totalSales that accepts an array of objects where each object represents a salesperson, and has a sales property. The function should return the total of every object's sales property.
+
+            function totalSales(arr){
+                var total = 0
+                for (var i = 0; i < arr.length; i++){
+                    total += arr[i].sales
+                }
+                return total / arr.length
+            }
+
+            // Write a function named newSalesperson with two parameters, a string that contains a name, and a number representing the person's sales, and returns an object with properties name and sales.
+
+            function newSalesperson (a, b){
+                var obj = a.split()
+                var obj2 = {
+                    name:obj[0],
+                    sales:b
+                }
+                return obj2
+            }
+
+            // Write a function named countWords that accepts a string and returns the number of words in that string.
+
+            function countWords (arr){
+                var arr1 = arr.split(' ')
+                return arr1.length
+            }
+
+            //Modify your function named newSalesperson to allow it to take an array of numbers as the second argument. If the second parameter is an array, it should use the sum of those numbers as the sales property:
+
+            function sum (arr){
+                var sum1 = 0
+                for (var i = 0; i < arr.length; i++){
+                    sum1 += (arr[i])
+                }
+                return sum1
+            }
+            function newSalesperson (a, b){
+                var obj = a.split()
+                var obj2 = {
+                    name:obj[0],
+                    sales:sum(b)
+                }
+                return obj2
+            }
+
+            //Write a function named camelCase that accepts a string that has several words each separated by a space, and returns a string with no spaces but with the first letter capitalized of all words but the first one.
+
+            function capitalizeName (string){
+                return string.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+            }
+
+            // Source https://www.codegrepper.com/code-examples/delphi/capitalize+first+letter+after+space+javascript
+
+
+
+
+
+
         </script>
     </body>
 </html>
