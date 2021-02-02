@@ -3,7 +3,7 @@ $(document).ready(function (){
 
     //1) Id selectors part of exercise
 
-    // var content = $("#header-1").html();
+    // alert($('#header-1').html())
     // alert(content);
     //using same id on the elements and alert them, Jquery alerting only the first one
 
