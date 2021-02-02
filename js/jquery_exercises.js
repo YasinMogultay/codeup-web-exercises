@@ -4,7 +4,6 @@ $(document).ready(function (){
     //1) Id selectors part of exercise
 
     // alert($('#header-1').html())
-    // alert(content);
     //using same id on the elements and alert them, Jquery alerting only the first one
 
     //2) Class selectors part of exercise
@@ -19,8 +18,12 @@ $(document).ready(function (){
     // $('li').css('background', 'yellow');
     // $('h1').css('background', 'yellow');
     // $('p').css('background', 'yellow');
-    var h1Content = $('h1').text();
-    alert(h1Content);
+    // alert($('h1').text());
+
+    $('h1').each(function (){
+        alert($(this).html());
+    }) ;
+
 
     //4) Multiple selectors part of exercise
     $('li, p, h1').css('background', 'yellow');
