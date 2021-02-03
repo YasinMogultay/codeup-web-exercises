@@ -28,7 +28,7 @@ $(document).ready(function (){
     //4) Multiple selectors part of exercise
     // $('li, p, h1').css('background', 'yellow');
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // Mouse Events exercises
     //Q2
@@ -58,6 +58,7 @@ $(document).ready(function (){
             transition: '5s'});
     };
     liElements.hover(handler3, handler4);
+
 });
 
 
