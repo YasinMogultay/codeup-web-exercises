@@ -14,18 +14,51 @@ $(document).ready(function (){
 
     //3) Element selectors part of exercise
 
-    $('li').css('font-size', '20px');
+    // $('li').css('font-size', '20px');
     // $('li').css('background', 'yellow');
     // $('h1').css('background', 'yellow');
     // $('p').css('background', 'yellow');
     // alert($('h1').text());
 
-    $('h1').each(function (){
-        alert($(this).html());
-    }) ;
+    // $('h1').each(function (){
+        // alert($(this).html());
+    // }) ;
 
 
     //4) Multiple selectors part of exercise
-    $('li, p, h1').css('background', 'yellow');
+    // $('li, p, h1').css('background', 'yellow');
+
+
+
+    // Mouse Events exercises
+    //Q2
+    var h1Elements = $('h1');
+    var handler = function(){
+        $(this).css('background', 'yellow');
+    };
+    h1Elements.click(handler);
+
+    //Q3
+    var pElements = $('p');
+
+    var handler1 = function (){
+        $(this).css('fontSize', '18px');
+    };
+    pElements.dblclick(handler1);
+
+    //Q4
+    var liElements = $('ul > li');
+
+    var handler3 = function (){
+        $(this).css({backgroundColor: 'red',
+        transition: '.5s'});
+    };
+    var handler4 = function (){
+        $(this).css({backgroundColor: '',
+            transition: '5s'});
+    };
+    liElements.hover(handler3, handler4);
 });
+
+
 
