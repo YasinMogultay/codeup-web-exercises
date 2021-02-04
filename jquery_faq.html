@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attribute Methods</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<p>10 FAQs about national parks</p>
+<dl>
+    <dt>Arches</dt>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing </dd>
+    <br>
+    <dt>Badlands</dt>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing elit. </dd>
+    <br>
+    <dt>Carlsbad Caverns</dt>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur </dd>
+    <br>
+    <dt>Denali</dt>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur </dd>
+    <br>
+    <dt>Everglades</dt>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing </dd>
+    <br>
+    <dt>Abilene</dt>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing </dd>
+    <br>
+    <dt>Big Bend</dt>
+    <dd>Question Lorem ipsum dolor sit amet, </dd>
+    <br>
+    <dt>Choke Canyon</dt>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing elit. </dd>
+    <br>
+    <dt>Davis Mountains</dt>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quas, </dd>
+    <br>
+    <dt>Enchanted Rock</dt>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur </dd>
+    <br>
+</dl>
+<a href="#" id="link">Click to highlight important text.</a>
+<script src="js/jquery-3.5.1.js"></script>
+<script>
+    "use strict";
+
+    $("document").ready(function (){
+
+        $("dd").addClass("invisible");
+        $("#link").click(function (){
+            // $(".invisible").removeClass("invisible")
+            $("dd").toggleClass("invisible")
+        });
+
+    });
+</script>
+</body>
+</html>
