@@ -7,8 +7,14 @@
         .invisible {
             visibility: hidden;
         }
+        .highlighted {
+            background-color: greenyellow;
+        }
         body {
             text-align: center;
+        }
+        dt {
+            display: inline-block;
         }
     </style>
 </head>
@@ -46,7 +52,7 @@
     <dd>Question Lorem ipsum dolor sit amet, consectetur </dd>
     <br>
 </dl>
-<a href="#" id="link">Click to highlight important text.</a>
+<a href="#" id="link">Click to see questions.</a>
 <script src="js/jquery-3.5.1.js"></script>
 <script>
     "use strict";
@@ -55,8 +61,12 @@
 
         $("dd").addClass("invisible");
         $("#link").click(function (){
-            // $(".invisible").removeClass("invisible")
-            $("dd").toggleClass("invisible")
+            $("dd").toggleClass("invisible");
+        });
+
+        $("dt").addClass("highlighted");
+        $("dt").click(function (){
+            $("dt").toggleClass("highlighted");
         });
 
     });
