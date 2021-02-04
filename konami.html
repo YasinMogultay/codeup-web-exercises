@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1 style="text-align: center;">Konami Contra</h1>
+
+<div id="konami-gif" style="margin: auto; width: 510px; height: 450px; border: 3px solid black"></div>
+
+<script src="js/jquery-3.5.1.js"></script>
+<script>
+    "use strict";
+
+    $(document).keyup(function(event){
+        console.log(event.keyCode);
+    });
+
+    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    var emptyArray = [];
+
+    $(document).keyup (function (e){
+        emptyArray.push(e.keyCode);
+        if (JSON.stringify(konamiCode) === JSON.stringify(emptyArray)) {
+            $('#konami-gif').css('background-image', 'url("img/konami.gif")');
+        }
+    });
+</script>
+</body>
+</html>
