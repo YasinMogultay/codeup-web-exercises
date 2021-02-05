@@ -2,72 +2,228 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Attribute Methods</title>
+    <title>Essential Methods</title>
     <style>
         .invisible {
             visibility: hidden;
         }
+
         .highlighted {
             background-color: greenyellow;
         }
-        body {
-            text-align: center;
-        }
+
         dt {
             display: inline-block;
         }
+
+        div {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .customDiv1 {
+            margin: auto;
+            border: 3px solid black;
+            width: 400px;
+            height: 300px;
+            background-image: url("img/photo-1.jpeg");
+            background-size: 400px 300px;
+        }
+
+        .customDiv2 {
+            margin: auto;
+            border: 3px solid black;
+            width: 400px;
+            height: 300px;
+            background-image: url("img/photo-2.jpeg");
+            background-size: 400px 300px;
+        }
+
+        .customDiv3 {
+            margin: auto;
+            border: 3px solid black;
+            width: 400px;
+            height: 300px;
+            background-image: url("img/photo-3.jpeg");
+            background-size: 400px 300px;
+        }
+
+        .customButton {
+            margin: 10px auto;
+        }
+
     </style>
 </head>
 <body>
 <p>10 FAQs about national parks</p>
 <dl>
     <dt>Arches</dt>
-    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing </dd>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing</dd>
     <br>
     <dt>Badlands</dt>
-    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing elit. </dd>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing elit.</dd>
     <br>
     <dt>Carlsbad Caverns</dt>
-    <dd>Question Lorem ipsum dolor sit amet, consectetur </dd>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur</dd>
     <br>
     <dt>Denali</dt>
-    <dd>Question Lorem ipsum dolor sit amet, consectetur </dd>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur</dd>
     <br>
     <dt>Everglades</dt>
-    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing </dd>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing</dd>
     <br>
     <dt>Abilene</dt>
-    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing </dd>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing</dd>
     <br>
     <dt>Big Bend</dt>
-    <dd>Question Lorem ipsum dolor sit amet, </dd>
+    <dd>Question Lorem ipsum dolor sit amet,</dd>
     <br>
     <dt>Choke Canyon</dt>
-    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing elit. </dd>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing elit.</dd>
     <br>
     <dt>Davis Mountains</dt>
-    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quas, </dd>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quas,</dd>
     <br>
     <dt>Enchanted Rock</dt>
-    <dd>Question Lorem ipsum dolor sit amet, consectetur </dd>
+    <dd>Question Lorem ipsum dolor sit amet, consectetur</dd>
     <br>
 </dl>
 <a href="#" id="link">Click to see questions.</a>
+<h3>Arches</h3>
+<ul>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+</ul>
+<h3>Badlands</h3>
+<ul>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+</ul>
+<h3>Denali</h3>
+<ul>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+</ul>
+<button id="button">Click to make the last li in each ul have a yellow background.</button>
+<br>
+<br>
+<div>
+    <div class="customDiv1" id="customId1"></div>
+
+    <div class="customDiv2" id="customId2"></div>
+
+    <div class="customDiv3" id="customId3"></div>
+</div>
+<div>
+    <button id="button1" class="customButton">Swap</button>
+    <button id="button2" class="customButton">Swap</button>
+    <button id="button3" class="customButton">Swap</button>
+</div>
 <script src="js/jquery-3.5.1.js"></script>
 <script>
     "use strict";
 
-    $("document").ready(function (){
-
+    $("document").ready(function () {
+        //First exercise Questions  and bonus
         $("dd").addClass("invisible");
-        $("#link").click(function (){
+        $("#link").click(function () {
             $("dd").toggleClass("invisible");
         });
 
         $("dt").addClass("highlighted");
-        $("dt").click(function (){
-            $("dt").toggleClass("highlighted");
+        $("dt").click(function () {
+            $(this).toggleClass("highlighted");
         });
+
+        //Second exercise Questions
+
+        $("#button").click(function () {
+            $("ul li:last-child").css("backgroundColor", "yellow");
+        });
+
+        $("h3").click(function () {
+            $('li').css("fontWeight", "bold");
+        });
+
+        $("li").click(function () {
+            $(this).parent().children().first().css("color", "blue");
+        });
+
+        //Second Question's Bonus
+
+        $("#button1").click(function () {
+            $("#customId1").each(function () {
+                if ($("#customId1").hasClass("customDiv1")) {
+                    $("#customId1").addClass('customDiv2');
+                    $("#customId1").removeClass("customDiv1");
+                } else if ($("#customId1").hasClass("customDiv2")) {
+                    $("#customId1").addClass('customDiv1');
+                    $("#customId1").removeClass("customDiv2");
+                }
+            });
+
+            $("#customId2").each(function () {
+                if ($("#customId2").hasClass("customDiv2")) {
+                    $("#customId2").addClass('customDiv1');
+                    $("#customId2").removeClass('customDiv2');
+                } else if ($("#customId2").hasClass("customDiv1")) {
+                    $("#customId2").addClass('customDiv2');
+                    $("#customId2").removeClass("customDiv1");
+                }
+            });
+        });
+
+
+        $("#button2").click(function () {
+            $("#customId1").each(function () {
+                if ($("#customId1").hasClass("customDiv2")) {
+                    $("#customId1").addClass('customDiv1');
+                    $("#customId1").removeClass("customDiv2");
+                } else if ($("#customId1").hasClass("customDiv1")) {
+                    $("#customId1").addClass('customDiv2');
+                    $("#customId1").removeClass("customDiv1");
+                }
+            });
+
+            $("#customId2").each(function () {
+                if ($("#customId2").hasClass("customDiv1")) {
+                    $("#customId2").addClass('customDiv2');
+                    $("#customId2").removeClass('customDiv1');
+                } else if ($("#customId2").hasClass("customDiv2")) {
+                    $("#customId2").addClass('customDiv1');
+                    $("#customId2").removeClass("customDiv2");
+                }
+            });
+        });
+
+        $("#button3").click(function () {
+            $("#customId3").each(function () {
+                if ($("#customId3").hasClass("customDiv3")) {
+                    $("#customId3").addClass('customDiv2');
+                    $("#customId3").removeClass("customDiv3");
+                } else if ($("#customId3").hasClass("customDiv2")) {
+                    $("#customId3").addClass('customDiv3');
+                    $("#customId3").removeClass("customDiv2");
+                }
+            });
+
+            $("#customId2").each(function () {
+                if ($("#customId2").hasClass("customDiv2")) {
+                    $("#customId2").addClass('customDiv3');
+                    $("#customId2").removeClass('customDiv2');
+                } else if ($("#customId2").hasClass("customDiv3")) {
+                    $("#customId2").addClass('customDiv2');
+                    $("#customId2").removeClass("customDiv3");
+                }
+            });
+        });
+
 
     });
 </script>
