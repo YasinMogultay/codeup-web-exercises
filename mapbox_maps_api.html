@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox API</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+<div id='mapBox' style='width: 400px; height: 300px; border: 5px solid black; width: 120vh; height: 70vh; margin: 7em auto'></div>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script>
+    "use strict";
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'mapBox', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.598600, 29.609500], // starting position [lng, lat]
+        zoom: 15 // starting zoom
+    });
+
+
+    // Generate a map that shows the city with your favorite restaurant using geocoding
+    geocode("17623 La Cantera Pkwy Suite 101, San Antonio, TX 78257", mapboxToken).then(function(result) {
+        map.setCenter(result);
+        map.setZoom(15);
+    });
+
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
+
+    //Create a popup with the name of the restaurant.
+    var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+        '<h1>Hopdoddy Burger Bar.</h1>'
+    );
+
+    //Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-98.598600, 29.609500])
+        .setPopup(popup)
+        .addTo(map);
+
+    //Array an objects for 3 different fav restaurants
+    var arr = [{
+        "name": "Restaurant1",
+        "type":"favorite",
+        "coordinates": [-98.59895187077224, 29.60336619403024]
+    },
+    {
+        "name": "Restaurant1",
+        "type":"favorite",
+        "coordinates": [-98.60245592078878, 29.614012963957656]
+        },];
+
+    // Foreach function for markers
+    arr.each(function (data){
+
+    });
+
+</script>
+
+</body>
+</html>
