@@ -9,6 +9,11 @@
 <body>
 
 <div id='mapBox' style='width: 400px; height: 300px; border: 5px solid black; width: 120vh; height: 70vh; margin: 7em auto'></div>
+<select name="zoomLevel">
+    <option value="five">5</option>
+    <option value="ten">10</option>
+    <option value="fiftheen">15</option>
+</select>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
@@ -24,40 +29,72 @@
 
     // Generate a map that shows the city with your favorite restaurant using geocoding
     geocode("17623 La Cantera Pkwy Suite 101, San Antonio, TX 78257", mapboxToken).then(function(result) {
-        map.setCenter(result);
-        map.setZoom(15);
+        // map.setCenter(result);
+        // map.setZoom(15);
     });
 
     // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl());
 
     //Create a popup with the name of the restaurant.
-    var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-        '<h1>Hopdoddy Burger Bar.</h1>'
-    );
+    // var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+    //     '<h1>Hopdoddy Burger Bar.</h1>'
+    // );
 
     //Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance
-    var marker = new mapboxgl.Marker()
-        .setLngLat([-98.598600, 29.609500])
-        .setPopup(popup)
-        .addTo(map);
+    // var marker = new mapboxgl.Marker()
+    //     .setLngLat([-98.598600, 29.609500])
+    //     .setPopup(popup)
+    //     .addTo(map);
 
-    //Array an objects for 3 different fav restaurants
-    var arr = [{
-        "name": "Restaurant1",
-        "type":"favorite",
-        "coordinates": [-98.59895187077224, 29.60336619403024]
-    },
-    {
-        "name": "Restaurant1",
-        "type":"favorite",
-        "coordinates": [-98.60245592078878, 29.614012963957656]
-        },];
 
-    // Foreach function for markers
-    arr.each(function (data){
+    // Array an objects
 
+    var restaurants = [
+        {
+            name: 'Hopdoddy Burger Bar ',
+            address: '17623 La Cantera Pkwy Suite 101, San Antonio, TX 78257',
+            description: 'My favorite fast food chicken burger is chick fil la'
+        },
+        {
+            name: 'Yard House my favorite food is Burger',
+            address: '15900 La Cantera Pkwy Suite 100, San Antonio, TX 78256',
+            description: 'My favorite food is Burger'
+        },
+        {
+            name: 'Chick Fill A my favorite food is Burger',
+            address: '18203 W I-10, San Antonio, TX 78257',
+            description: 'My favorite food is Burger'
+        }
+    ]
+
+        // add marker to map
+        // Address geocoding, or simply geocoding, is the process of taking a text-based description of a location, such as an address
+        // or the name of a place, and returning geographic coordinates, frequently latitude/longitude pair, to identify a
+        // location on the Earth's surface
+    restaurants.forEach(function(restaurant){
+        geocode(restaurant.address, mapboxToken).then(function(result){
+            //rest of body that tells us what to do with the results
+            // map.setCenter(result);
+            map.setZoom(12);
+
+            var restaurantPopup = new mapboxgl.Popup()
+                .setHTML(restaurant.name + restaurant.description);
+
+            new mapboxgl.Marker()
+                .setLngLat(result)
+                .setPopup(restaurantPopup)
+                .addTo(map);
+        });
     });
+
+    // var zoomSelect = [5, 10, 15]
+    // function zoomSelect (zoomLevel){
+    //     for (var i = 0; i < zoomLevel.length; i++){
+            // if ()
+        // }
+    // }
+
 
 </script>
 
