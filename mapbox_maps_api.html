@@ -18,7 +18,7 @@
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
     "use strict";
-    mapboxgl.accessToken = mapboxToken;
+    mapboxgl.accessToken = MAPBOX_TOKEN;
     var map = new mapboxgl.Map({
         container: 'mapBox', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
@@ -28,10 +28,10 @@
 
 
     // Generate a map that shows the city with your favorite restaurant using geocoding
-    geocode("17623 La Cantera Pkwy Suite 101, San Antonio, TX 78257", mapboxToken).then(function(result) {
+    // geocode("17623 La Cantera Pkwy Suite 101, San Antonio, TX 78257", mapboxToken).then(function(result) {
         // map.setCenter(result);
         // map.setZoom(15);
-    });
+    // });
 
     // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl());
@@ -68,12 +68,11 @@
         }
     ]
 
-        // add marker to map
         // Address geocoding, or simply geocoding, is the process of taking a text-based description of a location, such as an address
         // or the name of a place, and returning geographic coordinates, frequently latitude/longitude pair, to identify a
         // location on the Earth's surface
     restaurants.forEach(function(restaurant){
-        geocode(restaurant.address, mapboxToken).then(function(result){
+        geocode(restaurant.address, MAPBOX_TOKEN).then(function(result){
             //rest of body that tells us what to do with the results
             // map.setCenter(result);
             map.setZoom(12);
