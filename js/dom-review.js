@@ -6,7 +6,7 @@ $(".card").click(function (){
     $(this).toggleClass("toggleClass")
 });
 
-//2 Question Get and modify the css values from an element
+// Get and modify the css values from an element
 $(".card").hover(
     function (){
         $(this).css("backgroundColor", "black");
@@ -14,10 +14,26 @@ $(".card").hover(
     function (){
         $(this).css("backgroundColor", "")
     }
-)
+);
+//Another answer for that question
+let hoverIn = function () {
+    $(this).css({
+        backgroundColor: "black",
+        color: "white"
+    });
+};
 
-//Question 3
-console.log($(".list-group > li")); // Get and modify the text value from an element
+let hoverOut = function () {
+    $(this).css({
+        backgroundColor: "",
+        color: ""
+    })
+}
+// hover usually takes in two parameters
+$('.card').hover(hoverIn, hoverOut);
+
+//Get and modify the text value from an element
+console.log($(".list-group > li")); // log the result if you are not sure
 
 $(".list-group > li").dblclick(function (){
     $(this).text("I GOT CLICKED!");
@@ -27,22 +43,18 @@ $(".list-group > li").dblclick(function (){
 });
 
 //Write a handler function that is passed in to the event create a new element and append it to another element
-//1)get the data
-//2)bundle the data (maybe)
-//3)create the elements from that match the html
-//4)inject the data into the elements
-//5)add the elements to the DOM ((get the input's ID's))
+
 
 // this function making a new object
-// function getInputData (){
-//     let first = $("#first").val();
-//     let last = $('#last').val();
-//     let handleField = $('#handleField').val();
-//
-//     return {
-//         id: 4, firstName: first, lastName: last, handleField: handleField
-//     };
-// }
+function getInputData (){
+    let first = $("#first").val();
+    let last = $('#last').val();
+    let handleField = $('#handleField').val();
+
+    return {
+        id: 4, firstName: first, lastName: last, handleField: handleField
+    };
+}
 // Create a new element and append it to another element
 $("#submitBtn").click(function (){
     // console.log(getInputData());
@@ -75,18 +87,18 @@ $("img").click(function (){
 });
 
 // Another Question
-$('#submitBtn').click(function (){
-    window.location.replace("https://www.google.com/"); // Use the window object to navigate to a new url in the browser
-    location.reload(); // Use the window object to reload a page
-})
+// $('#submitBtn').click(function (){
+//     window.location.replace("https://www.google.com/"); // Use the window object to navigate to a new url in the browser
+//     location.reload(); // Use the window object to reload a page
+// })
 
 //How to get text from an input field and ADD text to it (not replace)
-// $("#first").val($("#first").val() + " CARLOOOOOOS")
+$("#first").val($("#first").val() + " CARLOOOOOOS")
 
 //second approach for above question
-var great = $("#first");
-great.val($("#first").val() + "SAM!!!!")
-
+// var great = $("#first");
+// great.val($("#first").val() + "SAM!!!!")
+//
 
 
 

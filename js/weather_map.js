@@ -3,9 +3,8 @@
     var lat = 29.4241;
     var long = -98.4936;
     let searchInput = $("#input")
-//To query the API With a object!
     weatherMap();
-
+    //created a function for ajax get request so when needed call the function
     function weatherMap() {
         $.get("https://api.openweathermap.org/data/2.5/onecall", {
             APPID: OWM_TOKEN,
@@ -18,6 +17,7 @@
         });
     }
 
+    //rendering weathermap data 
     function handleResponse(data) {
         let itemHTML = "";
         for (let i = 0; i < 5; i++) {
@@ -39,7 +39,7 @@
         $("#post").html(itemHTML);
     }
 
-
+    //Mapbox access token
     mapboxgl.accessToken = MAPBOX_TOKEN;
     let coordinates = document.getElementById('coordinates');
     let map = new mapboxgl.Map({
@@ -56,6 +56,7 @@
         .setLngLat([long, lat])
         .addTo(map);
 
+    // Map dragging function
     function onDragEnd() {
         let lngLat = marker.getLngLat();
         long = lngLat.lng
@@ -66,6 +67,7 @@
         weatherMap();
     }
 
+    //search input function
     function searchPlace() {
         geocode(searchInput.val(), MAPBOX_TOKEN).then(function (result) {
             long = result[0];
@@ -75,12 +77,14 @@
         })
     }
 
+    //when clickedn clear default value and assign searchplace function
     $("#button").click(function (e) {
         e.preventDefault();
         searchPlace();
     });
 
-    map.addControl(new mapboxgl.NavigationControl()); // Control
+    map.addControl(new mapboxgl.NavigationControl()); // MAp Control feature
+
     marker.on('dragend', onDragEnd);
 
 
