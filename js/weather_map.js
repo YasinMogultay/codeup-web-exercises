@@ -66,14 +66,12 @@
         weatherMap();
     }
 
-
     function searchPlace() {
         geocode(searchInput.val(), MAPBOX_TOKEN).then(function (result) {
             long = result[0];
             lat = result[1];
             marker.setLngLat([long, lat])
             weatherMap();
-
         })
     }
 
@@ -81,7 +79,6 @@
         e.preventDefault();
         searchPlace();
     });
-
 
     map.addControl(new mapboxgl.NavigationControl()); // Control
     marker.on('dragend', onDragEnd);
