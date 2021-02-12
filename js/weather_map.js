@@ -19,7 +19,7 @@
         });
     }
 
-    //rendering weathermap data to html
+    //rendering weathermap data to html with for loop for 5 cards
     function handleResponse(data) {
         let itemHTML = "";
         for (let i = 0; i < 5; i++) {
@@ -51,6 +51,7 @@
         zoom: 8
     });
 
+    //Make draggable marker
     let marker = new mapboxgl.Marker({
         draggable: true
     })
