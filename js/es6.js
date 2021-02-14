@@ -26,16 +26,26 @@ const users = [
     name: 'justin',
     email: 'justin@codeup.com',
     languages: ['html', 'css', 'javascript', 'php']
+  },
+  {
+    name: 'Yasin',
+    email: 'yasin@codeup.com',
+    languages: ['html', 'css', 'javascript']
   }
 ];
 
 // TODO: fill in your name and email and add some programming languages you know
 // to the languages array
+const  name = 'Yasin';
+const email = 'yasin@codeup.com';
+const languages = ['html', 'css', 'javascript']
+
 // TODO: replace the `var` keyword with `const`, then try to reassign a variable
 // declared as `const`
-var name = 'your_name_here';
-var email = '';
-var languages = [];
+const name = 'Yasin';
+const email = 'yasin@codeup.com';
+const languages = [['html', 'css', 'javascript']];
+// const name = 'bboo' // Uncaught SyntaxError: Identifier 'name' has already been declared
 
 // TODO: rewrite the object literal using object property shorthand
 users.push({
