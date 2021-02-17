@@ -26,11 +26,6 @@ const users = [
     name: 'justin',
     email: 'justin@codeup.com',
     languages: ['html', 'css', 'javascript', 'php']
-  },
-  {
-    name: 'Yasin',
-    email: 'yasin@codeup.com',
-    languages: ['html', 'css', 'javascript']
   }
 ];
 
@@ -42,21 +37,19 @@ const languages = ['html', 'css', 'javascript']
 
 // TODO: replace the `var` keyword with `const`, then try to reassign a variable
 // declared as `const`
-const name = 'Yasin';
-const email = 'yasin@codeup.com';
-const languages = [['html', 'css', 'javascript']];
+
 // const name = 'bboo' // Uncaught SyntaxError: Identifier 'name' has already been declared
 
 // TODO: rewrite the object literal using object property shorthand
 users.push({
-  name: name,
-  email: email,
-  languages: languages
-});
+  name:name,
+  email:email,
+  languages
+})
 
 // TODO: replace `var` with `let` in the following variable declarations
-var emails = [];
-var names = [];
+let emails = [];
+let names = [];
 
 // TODO: rewrite the following using arrow functions
 users.forEach(function(user) {
@@ -67,7 +60,7 @@ users.forEach(function(user) {
 });
 
 // TODO: replace `var` with `let` in the following declaration
-var developers = [];
+let developers = [];
 users.forEach(function(user) {
   // TODO: rewrite the code below to use object destructuring assignment
   //       note that you can also use destructuring assignment in the function
