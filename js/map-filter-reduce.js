@@ -38,6 +38,27 @@ const users = [
     }
 ];
 
+//Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
 const userLanguages = users.filter(function (n){
+    return n.languages.length >= 3;
+});
+console.log(userLanguages);
+
+//Use .map to create an array of strings where each element is a user's email address
+
+const userEmails = users.map(function (n){
+    return n.email
+});
+console.log(userEmails);
+
+//Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
+const userExpAverage = users.reduce((total, person) => {
+    return  (total + person.yearsOfExperience);
+},0)
+
+console.log(userExpAverage / users.length);
+
+// Use .reduce to get the longest email from the list of users.
+const longestEmail = users.reduce((total,email) =>{
 
 });
