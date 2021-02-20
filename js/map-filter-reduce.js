@@ -42,14 +42,33 @@ const users = [
 const userLanguages = users.filter(function (n){
     return n.languages.length >= 3;
 });
-console.log(userLanguages);
+console.log(userLanguages); //logging result
+// rendering result to html
+let table = "";
+table +="<thead> <tr>" +
+    "<th> ID </th>" +
+    "<th> Name </th>" +
+    "<th> Email </th>" +
+    "<th> Languages </th>" +
+    "</tr> </thead>";
+for (let i = 0; i < userLanguages.length; i++){
+    table +=
+        "<tr>" +
+        "<td>" + userLanguages[i].id + "</td>" +
+        "<td>" + userLanguages[i].name + "</td>" +
+        "<td>" + userLanguages[i].email + "</td>" +
+        "<td>" + userLanguages[i].languages + "</td>" +
+        "</tr>"
+}
+$("#1").append(table);
 
 //Use .map to create an array of strings where each element is a user's email address
-
 const userEmails = users.map(function (n){
     return n.email
 });
 console.log(userEmails);
+
+$("#2").append("User Emails: "+userEmails);
 
 //Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
 const userExpAverage = users.reduce((total, person) => {
@@ -59,6 +78,21 @@ const userExpAverage = users.reduce((total, person) => {
 console.log(userExpAverage / users.length);
 
 // Use .reduce to get the longest email from the list of users.
-const longestEmail = users.reduce((total,email) =>{
+    const longestEmail = users.reduce(function (total, personEmail) {
+        if (personEmail.email.length > total.email.length){
+            return personEmail;
+        } else {
+            return total;
+        }
+    }, users[0])
+console.log(longestEmail);
 
-});
+$("#3").append(("Longest email: " + longestEmail.email))
+
+//Use .reduce to get the list of user's names in a single string.
+
+const userName = users.reduce((total, person) => {
+    return  (total + ", " + person.name);
+},0)
+console.log(userName);
+
