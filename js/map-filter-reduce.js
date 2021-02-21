@@ -96,3 +96,10 @@ const userName = users.reduce((total, person) => {
 },0)
 console.log(userName);
 
+//Use .reduce to get the unique list of languages from the list of users.
+
+const languagesList = users.reduce((total, person) =>{
+    return total + ", " + person.languages;
+},0);
+console.log(languagesList);
+
