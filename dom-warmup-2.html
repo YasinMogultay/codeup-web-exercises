@@ -45,6 +45,11 @@
 <div id="binary-container">
     <h2 id="#binary-display"></h2>
 </div>
+<ul class="bg-colors">
+    <li>Red</li>
+    <li>Green</li>
+    <li>Blue</li>
+</ul>
 
 <!--  Include the CDN script for jQuery below -->
 <script
@@ -94,8 +99,13 @@
         })
     });
     // li.unbind("click")
-
+// TODO: When an li in the ul with a class of `bg-colors` is double-clicked,
+// the background color of the page will change to the li's inner text
+// */
+$(".bg-colors > li").dblclick(function (){
+let backgroundColor = $(this).text();
+$("*").css("backgroundColor",backgroundColor);
+});
 </script>
 </body>
 </html>
-
