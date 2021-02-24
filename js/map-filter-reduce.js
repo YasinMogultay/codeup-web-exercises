@@ -39,67 +39,34 @@ const users = [
 ];
 
 //Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
-const userLanguages = users.filter(function (n){
-    return n.languages.length >= 3;
+
+const userLang = users.filter((languages) => {
+    return languages.languages.length > 2;
 });
-console.log(userLanguages); //logging result
-// rendering result to html
-let table = "";
-table +="<thead> <tr>" +
-    "<th> ID </th>" +
-    "<th> Name </th>" +
-    "<th> Email </th>" +
-    "<th> Languages </th>" +
-    "</tr> </thead>";
-for (let i = 0; i < userLanguages.length; i++){
-    table +=
-        "<tr>" +
-        "<td>" + userLanguages[i].id + "</td>" +
-        "<td>" + userLanguages[i].name + "</td>" +
-        "<td>" + userLanguages[i].email + "</td>" +
-        "<td>" + userLanguages[i].languages + "</td>" +
-        "</tr>"
-}
-$("#1").append(table);
+console.log(userLang);
 
 //Use .map to create an array of strings where each element is a user's email address
-const userEmails = users.map(function (n){
-    return n.email
+
+const userEmails = users.map((obj) => {
+    return obj.email;
 });
 console.log(userEmails);
 
-$("#2").append("User Emails: "+userEmails);
-
 //Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
-const userExpAverage = users.reduce((total, person) => {
-    return  (total + person.yearsOfExperience);
-},0)
 
-console.log(userExpAverage / users.length);
+const totalYearsOfExperience = users.reduce((total,years) => {
+    return (years.yearsOfExperience + total)
 
-// Use .reduce to get the longest email from the list of users.
-    const longestEmail = users.reduce(function (total, personEmail) {
-        if (personEmail.email.length > total.email.length){
-            return personEmail;
-        } else {
-            return total;
-        }
-    }, users[0])
-console.log(longestEmail);
-
-$("#3").append(("Longest email: " + longestEmail.email))
-
-//Use .reduce to get the list of user's names in a single string.
-
-const userName = users.reduce((total, person) => {
-    return  (total + ", " + person.name);
-},0)
-console.log(userName);
-
-//Use .reduce to get the unique list of languages from the list of users.
-
-const languagesList = users.reduce((total, person) =>{
-    return total + ", " + person.languages;
 },0);
-console.log(languagesList);
+console.log(totalYearsOfExperience / users.length);
 
+//Use .reduce to get the longest email from the list of users.
+
+const longestEmail = users.reduce((accumulater,currentNumber) => {
+    if (accumulater.email.length > currentNumber.email.length){
+        return accumulater.email
+    } else {
+        return currentNumber.email
+    }
+});
+console.log(longestEmail);
