@@ -27,8 +27,9 @@
         return new Promise((resolve, reject) => {
             resolve(fetch(url, {headers: {'Authorization': GITHUB_TOKEN}})
                 .then(response => response.json())
-                .then(data => console.log(data[0].created_at)))
+                .then(data => console.log(new Date(data[0].created_at))))
                 .catch(console.error)
         });
     }
     lastPush("YasinMogultay");
+
